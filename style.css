@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: #ff2c1f;
+    --text-color: #020307;
+    --bg-color: #fff;
+}
+
+body {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    font-family: 'poppinsط', sans-serif;
+    text-transform: capitalize;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    transition: .5s;
+    background-color: var(--main-color);
+}
+
+
+header a {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--bg-color);
+}
+
+.logo .bx {
+    font-size: 24px;
+    color: var(--bg-color);
+}
+
+.navbar {
+    display: flex;
+    column-gap: 80px;
+}
+
+.navbar.active {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.navbar li {
+    position: relative;
+    list-style: none;
+}
+
+.navbar a {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.navbar a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--bg-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.4s all linear;
+}
+
+.navbar a:hover::after,
+.navbar .home-active::after {
+    width: 100%;
+}
+
+#menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000001;
+    display: none;
+}
+
+.btn {
+    padding: 11px 22px;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 400;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: #fa1216;
+}
+
+.sec1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.text {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    color: white;
+    z-index: 2;
+}
+
+.text span {
+    display: block;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.text h1 {
+    font-size: 48px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.text a {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text a.book {
+    background-color: #e50914;
+    border-color: #e50914;
+}
+
+.text .play {}
+
+.text a:hover {
+    background-color: white;
+    color: #000;
+}
+
+.text a.play i {
+    font-size: 24px;
+}
+
+.container.active .slide {
+    transform: translateX(-100%);
+}
+
+.pagination {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    opacity: 1;
+    background-color: #e50914;
+}
+
+.sec2 {
+    padding: 50px 0 0 50px;
+    width: 1381px;
+}
+
+.sec2 h2 {
+    border-bottom: #ff2c1f solid 1px;
+    margin-bottom: 50px;
+}
+
+.movies-container {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 900px;
+}
+
+.movie {
+    text-align: center;
+}
+
+.movie .movie-des {
+    position: relative;
+    bottom: 30%;
+    font-size: 15px;
+    background-color: var(--main-color);
+}
+
+.movie img {
+    width: 260px;
+    height: 380px;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.movie img:hover {
+    transform: scale(1.2);
+}
+
+.sec3 {
+    padding: 50px 0 0 50px;
+    width: 1381px;
+}
+
+.sec3 h2 {
+    border-bottom: #ff2c1f solid 1px;
+    margin-bottom: 50px;
+}
+
+.coming-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1381px;
+    overflow: hidden;
+}
+
+.coming {
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.coming .coming-des {
+    position: relative;
+    bottom: 30%;
+    font-size: 15px;
+    background-color: var(--main-color);
+}
+
+.coming img {
+    width: 260px;
+    height: 380px;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.coming img:hover {
+    transform: scale(1.1);
+}
+
+.sec4 {
+    max-width: 960px;
+    padding: 100px 0 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    left: 35%;
+}
+
+.sec4 h2 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.sec4 form {
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.sec4 form input {
+    border: none;
+    outline: none;
+}
+
+.sec4 form input:first-child {
+    width: 280px;
+}
+
+.sec4 form input::placeholder {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sec4 form input:last-child {
+    padding: 11px 22px;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 400;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sec4 form input:last-child:hover {
+    background-color: #fa1216;
+}
+
+footer {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0 0 50px;
+    position: relative;
+    top: 400px;
+    background-color: var(--main-color);
+}
+
+footer a {
+    color: white;
+    font-size: 30px;
+}
+
+footer .social-cont {
+    display: flex;
+    margin-right: 50px;
+    gap: 20px;
+}
+
+.icon i:hover {
+    transform: translate(10px);
+    transition: all .40s;
+}
+
+.social-cont .icon:nth-child(1):hover i {
+    color: blue;
+}
+
+
+.social-cont .icon:nth-child(2):hover i {
+    color: lightskyblue;
+}
+
+
+.social-cont .icon:nth-child(3):hover i {
+    color: white;
+}
+
+
+.social-cont .icon:nth-child(4):hover i {
+    color: white;
+}
+
+.scroll {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--main-color);
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+
+.scroll i {
+    position: relative;
+    font-size: 40px;
+    top: 5px;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        row-gap: 10px;
+        display: none; 
+    }
+
+    #menu-icon {
+        display: block; 
+    }
+
+    .container {
+        flex-direction: column; 
+    }
+
+    .sec1 {
+        padding-top: 80px; 
+    }
+
+    .movies-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .sec2,
+    .sec3 {
+        padding: 30px 20px; 
+    }
+
+    .sec4 {
+        max-width: 100%; 
+        padding: 50px 20px; 
+    }
+
+    footer {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    footer .social-cont {
+        margin: 20px 0; 
+    }
+
+    .scroll {
+        width: 40px;
+        height: 40px;
+    }
+
+    .scroll i {
+        font-size: 30px; 
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        column-gap: 40px; 
+    }
+
+    .movies-container {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .coming-container {
+        flex-direction: column;
+    }
+}
