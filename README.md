@@ -1,1 +1,1 @@
-# movie-browser-2
+# movie-browser-js
